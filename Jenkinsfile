@@ -9,7 +9,8 @@ bat "docker build -t week7 ."
 }
 stage('Run') { 
   steps {
-echo "Run application in Docker Container" bat "docker rm -f mycontainer || exit /b 0"
+echo "Run application in Docker Container"
+    bat "docker rm -f mycontainer || exit /b 0"
 bat "docker run -d -p 5000:5000 --name mycontainer week7"
 }
 }
